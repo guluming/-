@@ -4,8 +4,14 @@ public class Main {
     public static void main(String[] ars) {
         Solution s = new Solution();
 
-        String new_id = "...!@BaT#*..y.abcdefghijklm";
-        String result = "bat.y.abcdefghi";
+//        String new_id = "...!@BaT#*..y.abcdefghijklm";
+//        String result = "bat.y.abcdefghi";
+
+        String new_id = "01234567898765.321";
+        String result = "01234567898765";
+
+//        String new_id = "bi";
+//        String result = "bii";
 
         String answer = s.solution(new_id);
 
