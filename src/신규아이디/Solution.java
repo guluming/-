@@ -3,27 +3,27 @@ package 신규아이디;
 
 class Solution {
     public String solution(String new_id) {
+        String answer = new_id.toLowerCase(); // 1단계
 
-        new_id = new_id.toLowerCase();
+        answer = answer.replaceAll("[^-_.a-z0-9]", ""); // 2단계
+        answer = answer.replaceAll("[.]{2,}", "."); // 3단계
+        answer = answer.replaceAll("^[.]|[.]$", "");    // 4단계
 
-        if (new_id.equals("")) {
-            new_id = "a";
+        if (answer.equals("")) {    // 5단계
+            answer += "a";
         }
 
-        if (new_id.length() >= 16) {
-            new_id = new_id.substring(0, 15);
-            if (new_id.charAt(new_id.length()-1) == '.') {
-                StringBuilder new_str_id = new StringBuilder(new_id);
-                new_id = new_str_id.deleteCharAt(14) + "";
+        if (answer.length() >= 16) {     // 6단계
+            answer = answer.substring(0, 15);
+            answer = answer.replaceAll("[.]$","");
+        }
+
+        if (answer.length() <= 2) {  // 7단계
+            while (answer.length() < 3) {
+                answer += answer.charAt(answer.length()-1);
             }
         }
 
-        while (new_id.length() <= 2) {
-            new_id = new_id + new_id.charAt(new_id.length()-1);
-        }
-
-        System.out.println(new_id);
-        String answer = new_id;
         return answer;
     }
 }
