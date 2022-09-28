@@ -3,8 +3,6 @@ package 난이도2.최댓값과최솟값;
 import java.util.*;
 
 public class Solution {
-    static int[][] map;
-
     public static String solution(String s) {
         String answer = "";
         String[] saar = new String[(s.length()+1)/2];
