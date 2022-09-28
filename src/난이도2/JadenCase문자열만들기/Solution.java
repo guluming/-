@@ -4,16 +4,24 @@ import java.util.*;
 
 public class Solution {
     public static String solution(String s) {
-        String[] saar1 = s.split(" ");
-        for (int i=0; i< saar1.length; i++) {
-            String[] saar2 = saar1[i].split("");
-            
-
-            if (!saar2[i].matches("\\d")) {
-                saar2[i] = saar2[i].toLowerCase();
-            }
-        }
         String answer = "";
+        String[] saar1 = s.split("");
+
+        for (int i=0; i< saar1.length; i++) {
+            if (i==0 && !saar1[i].matches("\\d")) {
+                saar1[i] = saar1[i].toUpperCase();
+            }
+
+            if (i!=0) {
+                if (saar1[i-1].equals(" ")) {
+                    saar1[i] = saar1[i].toUpperCase();
+                } else {
+                    saar1[i] = saar1[i].toLowerCase();
+                }
+            }
+
+            answer = answer + saar1[i];
+        }
         return answer;
     }
 
