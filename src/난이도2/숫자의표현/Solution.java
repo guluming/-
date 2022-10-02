@@ -4,17 +4,19 @@ import java.util.*;
 
 public class Solution {
     public static int solution(int n) {
-        int i=1;
-        Queue<Integer> list = new LinkedList<>();
-        while (n != 0) {
-            list.add(i);
-            n = n - i;
-            i++;
+        int answer = 0;
+        for (int i=1; i<=n; i++) {
+            int sum=0;
+            for (int j=i; j<=n; j++) {
+                sum = sum + j;
+                if (sum == n) {
+                    answer++;
+                    break;
+                } else if (sum > n) {
+                    break;
+                }
+            }
         }
-
-
-        System.out.println(list);
-        int answer = 2;
         return answer;
     }
 
