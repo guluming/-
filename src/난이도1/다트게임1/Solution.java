@@ -19,7 +19,6 @@ public class Solution {
                 }
             } catch (Exception e) {
                 numberList.add(dartResultList[i]);
-                continue;
             }
         }
 
@@ -27,35 +26,25 @@ public class Solution {
         for (int i = 1; i < numberList.size(); i++) {
             if (numberList.get(i).equals("S") && i == 1) {
                 result.add(Integer.parseInt(numberList.get(0)));
-                continue;
             } else if (numberList.get(i).equals("D") && i == 1) {
                 result.add(Integer.parseInt(numberList.get(0)) * Integer.parseInt(numberList.get(0)));
-                continue;
             } else if (numberList.get(i).equals("T") && i == 1) {
                 result.add(Integer.parseInt(numberList.get(0)) * Integer.parseInt(numberList.get(0)) * Integer.parseInt(numberList.get(0)));
-                continue;
             } else if (numberList.get(i).equals("*") && i == 2) {
                 result.set(0, 2 * result.get(0));
-                continue;
             } else if (numberList.get(i).equals("#") && i == 2) {
                 result.set(0, (-1) * result.get(0));
-                continue;
             } else if (numberList.get(i).equals("S")) {
                 result.add(Integer.parseInt(numberList.get(i - 1)));
-                continue;
             } else if (numberList.get(i).equals("D")) {
                 result.add(Integer.parseInt(numberList.get(i - 1)) * Integer.parseInt(numberList.get(i - 1)));
-                continue;
             } else if (numberList.get(i).equals("T")) {
                 result.add(Integer.parseInt(numberList.get(i - 1)) * Integer.parseInt(numberList.get(i - 1)) * Integer.parseInt(numberList.get(i - 1)));
-                continue;
             } else if (numberList.get(i).equals("*")) {
                 result.set(result.size() - 2, 2 * result.get(result.size() - 2));
                 result.set(result.size() - 1, 2 * result.get(result.size() - 1));
-                continue;
             } else if (numberList.get(i).equals("#")) {
                 result.set(result.size() - 1, (-1) * result.get(result.size() - 1));
-                continue;
             }
         }
 
