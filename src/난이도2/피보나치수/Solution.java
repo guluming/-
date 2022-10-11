@@ -10,17 +10,16 @@ public class Solution {
         while (n >= count) {
             if (count == 0) {
                 list.add(0);
-                count++;
-                i++;
+
             } else if (count == 1) {
                 list.add(1);
-                count++;
-                i++;
+
             } else {
                 list.add((list.get(i - 1) + list.get(i - 2)) % 1234567);
-                count++;
-                i++;
+
             }
+            count++;
+            i++;
         }
 
         return list.get(list.size() - 1);
