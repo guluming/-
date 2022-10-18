@@ -6,28 +6,20 @@ public class Solution {
     public static int solution(String[][] clothes) {
         int answer = 1;
 
-        LinkedList<String> clothes_list = new LinkedList<>();
-        for (int i = 0; i < clothes.length; i++) {
-            if (clothes_list.isEmpty()) {
-                clothes_list.add(clothes[i][1]);
-            } else if (!clothes_list.contains(clothes[i][1])) {
-                clothes_list.add(clothes[i][1]);
-            }
-        }
-
-        if (clothes_list.size() == 1) {
-            return clothes.length;
-        }
-
         HashMap<String, Integer> result = new HashMap<>();
-        for (int i = 0; i < clothes_list.size(); i++) {
+        for (int i = 0; i < clothes.length; i++) {
+            String clothe = clothes[i][1];
             int temp = 0;
             for (int j = 0; j < clothes.length; j++) {
-                if (clothes_list.get(i).equals(clothes[j][1])) {
+                if (clothe.equals(clothes[j][1])) {
                     temp++;
                 }
             }
-            result.put(clothes_list.get(i), temp);
+            result.put(clothe, temp);
+        }
+
+        if (result.size() == 1) {
+            return clothes.length;
         }
 
         for (int key : result.values()) {
