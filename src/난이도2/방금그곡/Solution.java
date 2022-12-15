@@ -45,53 +45,6 @@ public class Solution {
         return note.toString();
     }
 
-//    public static List<String> melodyCheck(String melody) {
-//        List<String> melodyResult = new ArrayList<>();
-//        String[] temp = melody.split("");
-//        for (int i = 0; i < temp.length; i++) {
-//            if (i == temp.length - 1) {
-//                melodyResult.add(temp[i]);
-//            } else if (temp[i + 1].equals("#")) {
-//                String realMelody = temp[i] + temp[i + 1];
-//                melodyResult.add(realMelody);
-//                i++;
-//            } else {
-//                melodyResult.add(temp[i]);
-//            }
-//        }
-//
-//        return melodyResult;
-//    }
-//
-//    public static int musicTime(String start, String end) {
-//        String[] startHM = start.split(":");
-//        String[] endHM = end.split(":");
-//
-//        int h = Integer.parseInt(endHM[0]) - Integer.parseInt(startHM[0]);
-//        int m = Integer.parseInt(endHM[1]) - Integer.parseInt(startHM[1]);
-//
-//        return h * 60 + m;
-//    }
-//
-//    public static String realRadioMelody(int musicTime, List<String> Melody) {
-//        List<String> temp = new ArrayList<>();
-//        for (int i = 0; i < musicTime; i++) {
-//            if (i < Melody.size() - 1) {
-//                temp.add(Melody.get(i));
-//            } else {
-//                int a = i % Melody.size();
-//                temp.add(Melody.get(a));
-//            }
-//        }
-//
-//        String result = "";
-//        for (String s : temp) {
-//            result = result + s;
-//        }
-//
-//        return result;
-//    }
-
     public static void main(String[] args) {
         String m = "ABCDEFG";
         String[] musicinfos = {"12:00,12:14,HELLO,CDEFGAB", "13:00,13:05,WORLD,ABCDEF"};
