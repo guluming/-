@@ -7,23 +7,32 @@ public class Solution2 {
     public static String solution(int k, String[] dic, String chat) {
         StringBuilder answer = new StringBuilder();
         String[] checkChat = chat.split(" ");
-        for (int i = 0; i < dic.length; i++) {
-            for (int j = 0; j < checkChat.length; j++) {
-                if (dic[i].equals(checkChat[j])) {
-                    checkChat[j] = checkChat[j].replaceAll(".", "#");
-                } else if (dic[i].length() >= checkChat[j].length()) {
-                    checkChat[j] = checkChat[j].replaceAll(".", "#");
+        for (int i = 0; i < checkChat.length; i++) {
+            for (int j = 0; j < dic.length; j++) {
+                if (checkChat[i].equals(dic[j])) {
+                    checkChat[i] = checkChat[i].replaceAll(".", "#");
+                } else if (checkChat[i].contains(".")) {
+
                 }
             }
         }
 
         System.out.println(Arrays.toString(checkChat));
-        for (int i = 0; i < checkChat.length; i++) {
-            answer.append(" ").append(checkChat[i]);
-        }
 
         System.out.println(answer);
         return answer.toString();
+    }
+
+    public static int countChar(String str, char ch) {
+        int count = 0;
+
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == ch) {
+                count++;
+            }
+        }
+
+        return count;
     }
 
     public static void main(String[] args) {
